@@ -1,0 +1,9 @@
+description: Redcrab migration
+forward: >
+  put sql here
+  to move your database schema
+  forward
+backward: >
+  put sql here
+  to undo the schema introduced
+  in forward

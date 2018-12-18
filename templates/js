@@ -1,0 +1,11 @@
+'use strict';
+
+module.exports = {
+  description: 'Redcrab Migration',
+  forward: (db) => {
+    db.query('migration sql goes here');
+  },
+  backward: (db) => {
+    db.query('migration sql goes here');
+  }
+};

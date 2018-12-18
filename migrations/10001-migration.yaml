@@ -1,0 +1,5 @@
+description: Redcrab migration
+forward: >
+  alter table foo add column bar text not null
+backward: >
+  alter table foo drop column bar

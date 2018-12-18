@@ -1,0 +1,7 @@
+description: Redcrab migration
+forward: >
+  create table foo (
+  id serial primary key
+  )
+backward: >
+  drop table foo
