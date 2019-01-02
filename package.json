@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "DB migration tool built on top of muckraker",
   "main": "lib/index.js",
-  "files": ["./lib"],
+  "files": [
+    "./lib"
+  ],
   "scripts": {
     "lint": "eslint .",
+    "test": "lab -a code -t 100 --lint-options '{\"config\":\".eslintrc\"}'",
     "prettier": "prettier '**/*.js' --write"
   },
   "repository": {
@@ -29,9 +32,11 @@
     "pg-promise": "^8.5.4"
   },
   "devDependencies": {
+    "code": "^5.2.4",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.0",
+    "lab": "^18.0.1",
     "prettier": "^1.15.3"
   }
 }

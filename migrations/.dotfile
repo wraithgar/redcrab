@@ -1,0 +1,2 @@
+This is a dotfile in the migrations directory
+It is used for testing that dotfiles are ignored during tests
