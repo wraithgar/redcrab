@@ -1,0 +1,22 @@
+dist: trusty
+sudo: false
+language: node_js
+notifications:
+  email: false
+node_js:
+  - '10'
+install:
+  - npm ci
+before_install:
+  - npm install -g node-gyp
+  - npm install -g greenkeeper-lockfile
+before_script:
+  - greenkeeper-lockfile-update
+  - psql --version
+  - psql -c 'create database travis_ci_test;' -U postgres
+after_script:
+  - greenkeeper-lockfile-upload
+services:
+  - postgresql
+addons:
+  postgresql: '9.6'
