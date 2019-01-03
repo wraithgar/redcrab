@@ -38,7 +38,13 @@ describe('constructor', () => {
   });
 
   it('connection failure', { plan: 1 }, () => {
-    const r = new Redcrab({ connection: { username: 'mudcrab_fail' } });
+    const r = new Redcrab({
+      connection: {
+        database: 'should_not_exist',
+        username: 'mudcrab_fail',
+        password: 'nope'
+      }
+    });
     return r.ready.catch(e => {
       expect(e).to.exist();
     });
