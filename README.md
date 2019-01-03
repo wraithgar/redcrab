@@ -1,5 +1,7 @@
 # Redcrab
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wraithgar/redcrab.svg)](https://greenkeeper.io/)
+
 Postgresql DB Migrator built off of pg-promise
 
 ## CLI
