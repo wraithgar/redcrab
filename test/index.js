@@ -78,24 +78,6 @@ describe('constructor', () => {
     });
   });
 
-  it(
-    "multiple instances don't collide with each other's setup",
-    { plan: 5 },
-    async () => {
-      const redcrabs = [
-        new Redcrab(defaults),
-        new Redcrab(defaults),
-        new Redcrab(defaults),
-        new Redcrab(defaults),
-        new Redcrab(defaults)
-      ];
-      for (const r of redcrabs) {
-        await r.ready;
-        expect(r).to.be.an.instanceof(Redcrab);
-      }
-    }
-  );
-
   it('migration in db but not on filesystem', async () => {
     const r = new Redcrab(defaults);
     await r.ready;

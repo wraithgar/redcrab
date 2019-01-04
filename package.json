@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "test": "lab -a code -t 100 --lint-options '{\"config\":\".eslintrc\"}'",
+    "test": "lab -a code -t 100 --lint-options '{\"config\":\".eslintrc\"}' -v",
     "prettier": "prettier '**/*.js' --write"
   },
   "repository": {
