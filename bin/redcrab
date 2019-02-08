@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+'use strict';
+
+const Redcrab = require('../');
+
+const parseConnection = ({ connection }) => {
+  try {
+    connection = JSON.parse(connection);
+  } catch(e) {
+    connection = { connection };
+    //It's not json, assume it's a connection uri
+  }
+  return connection;
+};
+require('yargs')
+  .command({
+    command: 'create [name] [-t type]',
+    desc: 'Create a new migration file',
+    builder: (yargs) => {
+      yargs.default('name', 'migration')
+      yargs.option('t', {
+        description: 'Migration type',
+        alias: 'type',
+        default: 'yaml'
+      })
+    },
+    handler: async (argv) => {
+      const connection = parseConnection(argv);
+      const redcrab = new Redcrab({ connection });
+      await redcrab.create({ type:argv.type, name:argv.name, cli: true })
+      process.exit(0);
+    }
+  })
+  .option('connection', {
+    description: 'DB connection settings.',
+    default: '{}'
+  })
+  .demandCommand()
+  .help()
+  .wrap(72)
+  .argv;
