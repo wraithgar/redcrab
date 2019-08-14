@@ -8,8 +8,13 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "test": "lab -a code -t 100 --lint-options '{\"config\":\".eslintrc\"}' -v",
-    "prettier": "prettier '**/*.js' --write"
+    "test": "lab -a @hapi/code -t 100 -v -e test",
+    "docker:fresh": "docker-compose kill; docker-compose rm -f; docker-compose up -d",
+    "docker:purge": "docker-compose kill; docker-compose rm -f",
+    "docker:start": "docker-compose up -d",
+    "docker:start:fg": "docker-compose up",
+    "docker:createdb": "docker-compose exec postgres createdb -U pg redcrab_test",
+    "prettier": "prettier '**/*.{js,json}' --write"
   },
   "repository": {
     "type": "git",
@@ -35,13 +40,29 @@
     "lint",
     "test"
   ],
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 9
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
   "devDependencies": {
-    "code": "^5.2.4",
+    "@hapi/code": "^6.0.0",
+    "@hapi/lab": "^20.0.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "git-validate": "^2.2.4",
-    "lab": "^18.0.2",
     "prettier": "^1.18.2"
   }
 }

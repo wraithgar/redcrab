@@ -6,8 +6,8 @@ const Sql = require('../lib/sql');
 const Fs = require('fs');
 const Path = require('path');
 
-const lab = (exports.lab = require('lab').script());
-const { expect } = require('code');
+const lab = (exports.lab = require('@hapi/lab').script());
+const { expect } = require('@hapi/code');
 const { it, describe, beforeEach, after } = lab;
 const { db, table_name } = Fixtures;
 
