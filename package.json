@@ -13,6 +13,7 @@
     "docker:purge": "docker-compose kill; docker-compose rm -f",
     "docker:start": "docker-compose up -d",
     "docker:start:fg": "docker-compose up",
+    "docker:stop": "docker-compose kill",
     "docker:createdb": "docker-compose exec postgres createdb -U pg redcrab_test",
     "prettier": "prettier '**/*.{js,json}' --write"
   },
