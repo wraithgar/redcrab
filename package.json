@@ -58,7 +58,7 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@hapi/code": "^7.0.0",
+    "@hapi/code": "^8.0.1",
     "@hapi/lab": "^21.0.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
