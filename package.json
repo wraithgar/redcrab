@@ -61,7 +61,7 @@
     "@hapi/code": "^7.0.0",
     "@hapi/lab": "^21.0.0",
     "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.0",
     "git-validate": "^2.2.4",
     "prettier": "^1.18.2"
